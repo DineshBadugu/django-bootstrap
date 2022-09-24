@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import ContactForm
+from django.http import HttpResponse
 # Create your views here.
 def Home(request):
     return render(request,"uifiles/index.html")
@@ -13,4 +14,6 @@ def ConctactData(request):
         
         oContactinfo = ContactForm(Name=name,Email=email,Subject=subject,Message=message)
         oContactinfo.save()
-    return render(request,'uifiles/base.html')
+        sucess =f'hi {name} sucessfully Sending email'
+        return HttpResponse(sucess)
+    #return render(request,'uifiles/base.html')

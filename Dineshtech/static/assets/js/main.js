@@ -294,7 +294,8 @@
 
 // contactform
 
-let contactform = document.querySelector('#contactform');
+
+/** let contactform = document.querySelector('#contactform');
 let submit_btn = document.querySelector('#submit');
 contactform.addEventListener('submit', function(event){
             event.preventDefault();
@@ -311,3 +312,4 @@ let validateform = () =>{
   return true;
   //  return (checkname() && checkemail() && checksubject() && checkmessage());
 }
+*/
