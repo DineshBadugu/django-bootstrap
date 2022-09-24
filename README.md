@@ -2,7 +2,8 @@
 # DineshTechSolutions
 #git info
 #https://git-scm.com/download
-#clone-link : https://github.com/DineshBadugu/DineshTechSolutions.git
+<!-- #clone-link : https://github.com/DineshBadugu/DineshTechSolutions.git -->
+<!-- https://github.com/DineshBadugu/django-bootstrap.git -->
 
 
 
@@ -12,9 +13,10 @@
 #python -m venv env-dt7
 
 # activate virtual environment
-#env-dt7\Scripts\activate
+#env-dinesh\Scripts\activate
 
 # install libs
+pip freeze > requirements.txt 
 pip install -r requirements.txt
 
 # create django  project
