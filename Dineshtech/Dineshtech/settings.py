@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
+import environ
 from pathlib import Path
 
 
@@ -84,6 +85,15 @@ DATABASES = {
     }
 }
 
+#postgress 
+#   'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'Hospital',
+#         'USER': 'postgres',
+#         'PASSWORD': '123456',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -132,3 +142,25 @@ STATICFILES_DIRS=[
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+#create .env file 
+env = environ.Env()
+environ.Env.read_env()
+
+SITE_ID = 1
+ACCOUNT_DEFAULT_HTTP_PROTOCOL='http' 
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = env('email_username')
+EMAIL_HOST_PASSWORD = env('email_password')
+EMAIL_PORT = env('email_port')
+
+
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'badugudinesh94@gmail.com'
+# EMAIL_HOST_PASSWORD = '123456789B'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False

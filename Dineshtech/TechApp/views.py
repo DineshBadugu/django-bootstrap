@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from .models import ContactForm
 from django.http import HttpResponse
+from django.core.mail import send_mail
+
+
 # Create your views here.
 def Home(request):
     return render(request,"uifiles/index.html")
@@ -15,5 +18,11 @@ def ConctactData(request):
         oContactinfo = ContactForm(Name=name,Email=email,Subject=subject,Message=message)
         oContactinfo.save()
         sucess =f'hi {name} sucessfully Sending email'
+        message ='''
+        Subject:{}
+        Message:{}
+        From:{}
+        '''.format(subject,message,email)
+        send_mail(subject, message,'noreplaybadugudinesh94@gmail.com',recipient_list=['badugudinesh94@gmail.com']) 
         return HttpResponse(sucess)
-    #return render(request,'uifiles/base.html')
+    
