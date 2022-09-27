@@ -7,7 +7,7 @@
 
 
 
-#install env 
+#install env
 #pip install virtualenv
 # create virtual environment
 #python -m venv env-dt7
